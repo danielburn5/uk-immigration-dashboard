@@ -8,40 +8,40 @@
 <link rel="stylesheet" href="css/styles.css?v=feedback-1">
 </head><body>
 <header class="sitebar"><div class="shell"><a class="brand" href="./">UK Migration <span style="color:#83cabc">/ In Context</span></a><nav aria-label="Main navigation"><a href="./">Overview</a><a href="explore.html">Explore</a><a href="claims.html">Claim checks</a><a href="about.html">Why I built this</a><a href="feedback.html" aria-current="page">Feedback</a></nav></div></header>
-<div class="hero"><div class="shell"><div class="eyebrow">Help make the evidence clearer</div><h1>Share your feedback</h1><p>Spotted an error, have an idea, or want to suggest a claim to investigate? I'd welcome your thoughts.</p></div></div>
+<div class="hero"><div class="shell"><div class="eyebrow">I'd love to hear from you</div><h1>Got something to say?</h1><p>Found a mistake? Got an idea? Think there's a claim I should look into? Drop me a message.</p></div></div>
 <main class="shell feedback-main">
   <section class="feedback-panel" aria-labelledby="feedback-heading">
-    <h2 id="feedback-heading">Send a message</h2>
-    <p class="feedback-intro">Feedback helps improve this independent project. You can send a message anonymously, or leave your email if you'd like a reply.</p>
+    <h2 id="feedback-heading">Drop me a note</h2>
+    <p class="feedback-intro">This is a little side project, and I'm always happy to hear what people think. No need to leave your name or email unless you'd like me to get back to you.</p>
     <div id="feedback-success" class="feedback-success" role="status" hidden tabindex="-1">
-      <strong>Thanks for your feedback.</strong> Your message has been sent.
+      <strong>Thanks for getting in touch!</strong> Your message is on its way.
     </div>
     <div id="feedback-error" class="feedback-error" role="alert" hidden></div>
     <form id="feedback-form" action="https://formspree.io/f/xjywdkle" method="POST">
       <div class="feedback-field">
-        <label for="feedback-category">What is your feedback about?</label>
+        <label for="feedback-category">What's on your mind?</label>
         <select name="category" id="feedback-category" required>
-          <option value="" disabled selected>Choose a category</option>
-          <option value="Report an error">Report an error</option>
-          <option value="Suggest an improvement">Suggest an improvement</option>
-          <option value="Suggest a claim to examine">Suggest a claim to examine</option>
+          <option value="" disabled selected>Pick whatever fits best</option>
+          <option value="Report an error">I spotted something wrong</option>
+          <option value="Suggest an improvement">I've got an idea</option>
+          <option value="Suggest a claim to examine">There's a claim you should check</option>
           <option value="Other feedback">Something else</option>
         </select>
       </div>
       <div class="feedback-field">
-        <label for="feedback-message">Your message <span aria-hidden="true">*</span></label>
-        <textarea name="message" id="feedback-message" required minlength="10" maxlength="5000" rows="6" placeholder="What would you like me to know?"></textarea>
+        <label for="feedback-message">Tell me more <span aria-hidden="true">*</span></label>
+        <textarea name="message" id="feedback-message" required minlength="10" maxlength="5000" rows="6" placeholder="Whatever's on your mind…"></textarea>
       </div>
       <div class="feedback-field">
-        <label for="feedback-email">Your email <span class="feedback-optional">(optional)</span></label>
-        <input type="email" name="email" id="feedback-email" autocomplete="email" placeholder="Only if you'd like a reply">
+        <label for="feedback-email">Email <span class="feedback-optional">(only if you'd like a reply)</span></label>
+        <input type="email" name="email" id="feedback-email" autocomplete="email" placeholder="you@example.com">
       </div>
       <div class="feedback-honeypot" aria-hidden="true">
         <label for="feedback-website">Leave this field empty</label>
         <input type="text" name="_gotcha" id="feedback-website" tabindex="-1" autocomplete="off">
       </div>
-      <p class="feedback-privacy">Your message is sent securely to Formspree for delivery to the site owner. If you include an email address, it will only be used to respond to your feedback. Please don't include sensitive personal information.</p>
-      <button type="submit" class="feedback-submit" id="feedback-submit">Send feedback</button>
+      <p class="feedback-privacy">Your message goes through Formspree to reach me. I'll only use your email to reply, if you've provided one. Please don't include anything sensitive.</p>
+      <button type="submit" class="feedback-submit" id="feedback-submit">Send message</button>
     </form>
   </section>
 </main>
