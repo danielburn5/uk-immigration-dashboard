@@ -141,3 +141,15 @@ details.data[open] > summary::before,
 .filter-status{margin:0 0 18px;color:var(--muted);font-size:12px}
 .claim[hidden]{display:none!important}
 @media(max-width:550px){.claim-filters{gap:7px}.claim-filter{padding:8px 10px;font-size:12px}}
+
+/* Chart reading order: takeaway, disclosures, footnotes. */
+.chart-disclosures{margin-top:16px;border-top:1px solid var(--line)}
+.chart-disclosures > details{border-bottom:1px solid var(--line);margin:0;padding:12px 0;background:transparent;border-radius:0}
+.chart-disclosures > details > summary{font-size:13px;font-weight:750;color:var(--teal)}
+.chart-disclosures .related-content{padding:12px 0 2px}
+.chart-disclosures .chart-method{display:block}
+.chart-disclosures .chart-method p{margin:10px 0 2px}
+.chart-disclosures details.data{margin:0}
+.chart-disclosures .data summary{font-size:13px}
+.chart-method-footnote{font-size:11px;line-height:1.5;color:var(--muted);margin:11px 0 0}
+.chart-method-footnote a{font-size:inherit}
