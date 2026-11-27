@@ -77,3 +77,23 @@ details.data{margin-top:16px;border-top:1px solid var(--line);padding-top:11px}d
 .related-claims{background:#f1f7f6;border:1px solid #d0e1dd;border-radius:10px;padding:16px;margin:17px 0}
 .related-claims h4{font-size:16px;color:#184e51}
 .related-claims a{font-size:14px}
+
+/* Concise evidence-first presentation: drill down only when needed */
+.claim-summary{font-weight:650;color:var(--ink)!important;font-size:15px!important;line-height:1.45}
+.claim-detail{margin-top:2px}
+.claim-detail summary,.chart-method summary,.related-claims summary{cursor:pointer;color:var(--teal);font-size:13px;font-weight:750;line-height:1.5;list-style-position:outside}
+.claim-detail summary:hover,.chart-method summary:hover,.related-claims summary:hover{text-decoration:underline}
+.claim-detail-body{margin-top:10px;color:var(--muted);font-size:13px;line-height:1.58}
+.claim-detail-body strong{color:var(--ink)}
+.claims-intro{color:var(--muted);max-width:740px;margin:0 0 22px}
+.claim-evidence{margin-top:8px}
+.claim-evidence .evidence-context{display:none}
+.claim-evidence:focus-within .evidence-context,.claim-evidence:hover .evidence-context{display:block}
+.related-claims{background:transparent;border:0;border-top:1px solid var(--line);border-radius:0;padding:13px 0 0;margin:18px 0 5px}
+.related-claims summary{font-size:14px}
+.related-content{padding:14px 0 4px}
+.related-content .related-label{font-size:10px}
+.chart-method{display:block;margin-top:10px;font-weight:400}
+.chart-method p{color:var(--muted);font-size:12px;margin:8px 0 0}
+.claim .reference{font-size:11px}
+@media(max-width:550px){.claim{gap:8px}.related-claims{padding-top:11px}}
