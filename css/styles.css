@@ -97,3 +97,37 @@ details.data{margin-top:16px;border-top:1px solid var(--line);padding-top:11px}d
 .chart-method p{color:var(--muted);font-size:12px;margin:8px 0 0}
 .claim .reference{font-size:11px}
 @media(max-width:550px){.claim{gap:8px}.related-claims{padding-top:11px}}
+
+/* Consistent disclosure controls: avoid browser-dependent outside list markers. */
+.related-claims > summary,
+.chart-method > summary,
+details.data > summary,
+.claim-detail > summary {
+  display:flex;
+  align-items:baseline;
+  gap:9px;
+  list-style:none;
+  padding:2px 0;
+  cursor:pointer;
+  text-align:left;
+}
+.related-claims > summary::-webkit-details-marker,
+.chart-method > summary::-webkit-details-marker,
+details.data > summary::-webkit-details-marker,
+.claim-detail > summary::-webkit-details-marker {display:none}
+.related-claims > summary::before,
+.chart-method > summary::before,
+details.data > summary::before,
+.claim-detail > summary::before {
+  content:"▸";
+  display:inline-block;
+  flex:0 0 12px;
+  width:12px;
+  color:var(--teal);
+  line-height:1.4;
+  text-align:center;
+}
+.related-claims[open] > summary::before,
+.chart-method[open] > summary::before,
+details.data[open] > summary::before,
+.claim-detail[open] > summary::before {content:"▾"}
