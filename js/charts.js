@@ -34,7 +34,7 @@ let reasonYear=2026;
 function drawReasons(){const a=REASONS[reasonYear],max=Math.max(...a),total=DATA.find(r=>r[0]===reasonYear)[4],ws=a[0]+a[1],pct=Math.round(ws/total*100);document.getElementById("reasons-chart").innerHTML=a.map((v,i)=>'<div class="reason"><span>'+reasonLabels[i]+'</span><div class="track" role="img" aria-label="'+reasonLabels[i]+': '+number(v)+'"><div class="fill" style="width:'+(v/max*100).toFixed(1)+'%;background:'+reasonColors[i]+'"></div></div><span class="num">'+short(v)+' <small>('+Math.round(v/total*100)+'%)</small></span></div>').join("");document.getElementById("reasons-note").textContent="Work and study account for "+number(ws)+" of "+number(total)+" non-EU+ arrivals in "+reasonYear+" (around "+pct+"%), including dependants. Asylum accounts for "+number(a[4])+" (around "+Math.round(a[4]/total*100)+"%). These are initial immigration reasons, not assessments of people's character or contribution.";table("reason-data",["Reason","Arrivals"],a.map((v,i)=>[reasonLabels[i],v]));}
 document.querySelectorAll("[data-reason]").forEach(b=>b.addEventListener("click",()=>{reasonYear=Number(b.dataset.reason);document.querySelectorAll("[data-reason]").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));drawReasons()}));drawReasons();
 
-\nfunction drawAge(group){
+function drawAge(group){
  const dat=AGE_DATA[group], max=Math.max(...dat.arrivals,...dat.departures);
  const root=document.getElementById("age-chart");
  root.setAttribute("aria-label",(group==="british"?"British":"Non-EU+")+" nationals: immigration and emigration by age, year ending June 2026");
