@@ -20,7 +20,7 @@ a:focus-visible{outline:3px solid #f5b65f;outline-offset:3px}
 .sitebar nav{display:flex;gap:20px}
 .sitebar nav a{font-size:13px;color:#d9e9e8;text-decoration:none}
 .sitebar nav a:hover{text-decoration:underline}
-.hero{background:#142b37;color:white;padding:60px 0 65px}
+.hero{background:#003d50 linear-gradient(90deg,rgba(0,44,58,.86),rgba(0,49,62,.68) 43%,rgba(0,55,70,.05)),url("assets/uk-hero.svg") center 51%/cover no-repeat;color:white;padding:64px 0 76px;min-height:250px}
 .eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:800;color:#79c6bd}
 h1{font-size:clamp(38px,6vw,62px);letter-spacing:-.045em;line-height:1.1;margin:15px 0}
 .lede{color:#d4e0e4;font-size:19px;max-width:680px;margin:0}
@@ -44,6 +44,10 @@ footer .shell{display:flex;gap:15px;justify-content:space-between;flex-wrap:wrap
 .about-method{margin:36px 0 0;padding:24px 0 0;border-top:1px solid var(--line)}
 .about-method h2{margin:0 0 14px}
 .about-method p{margin-bottom:15px}
+
+.sitebar{background:linear-gradient(105deg,#003343,#004558 74%,#003545);border-bottom:1px solid #ffffff25}
+.hero h1,.hero .lede,.hero .eyebrow{text-shadow:0 1px 9px #002b3880}
+@media(max-width:700px){.hero{background-image:linear-gradient(90deg,rgba(0,42,56,.95),rgba(0,48,62,.79)),url("assets/uk-hero.svg");background-position:center,67% 50%;padding:43px 0 58px;min-height:0}}
 </style>
 </head>
 <body>
