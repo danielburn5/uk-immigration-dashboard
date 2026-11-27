@@ -183,7 +183,7 @@ details.data[open] > summary::before,
 .hero-home{min-height:360px;padding:85px 0 105px}
 .hero h1,.hero p,.hero .eyebrow,.source-pill{position:relative;text-shadow:0 1px 9px #002b3880}
 @media(max-width:700px){
- .hero{background-position:center,67% 50%;min-height:0;padding:43px 0 58px}
+ .hero{background-position:center,91% 50%;min-height:0;padding:43px 0 58px}
  .hero-home{padding:57px 0 82px}
- .hero{background-image:linear-gradient(90deg,rgba(0,42,56,.95),rgba(0,48,62,.79)),url("../assets/uk-hero.svg")}
+ .hero{background-image:linear-gradient(90deg,rgba(0,42,56,.95),rgba(0,48,62,.65)),url("../assets/uk-hero.svg")}
 }
