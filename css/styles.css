@@ -72,3 +72,8 @@ details.data{margin-top:16px;border-top:1px solid var(--line);padding-top:11px}d
 .related-claims li{display:flex;flex-direction:column;gap:2px;font-size:13px;line-height:1.4}
 .related-claims a{font-weight:750;text-decoration:underline;text-underline-offset:3px}
 .related-note{color:var(--muted);font-size:12px}
+
+/* Make chart-to-claim links immediately discoverable beneath the visualization */
+.related-claims{background:#f1f7f6;border:1px solid #d0e1dd;border-radius:10px;padding:16px;margin:17px 0}
+.related-claims h4{font-size:16px;color:#184e51}
+.related-claims a{font-size:14px}
