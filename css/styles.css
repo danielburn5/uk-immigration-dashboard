@@ -61,3 +61,14 @@ details.data{margin-top:16px;border-top:1px solid var(--line);padding-top:11px}d
 /* Make fragment navigation clear and avoid cutting the charts against the viewport */
 #total-chart,#british-chart,#nationality-chart,#reasons-chart,#age-chart{scroll-margin-top:75px}
 #total-chart:target,#british-chart:target,#nationality-chart:target,#reasons-chart:target,#age-chart:target{outline:2px solid var(--teal);outline-offset:8px;border-radius:7px}
+
+/* Bidirectional navigation between graphs and evidence checks */
+.related-claims{border-top:1px solid var(--line);margin-top:22px;padding-top:17px}
+.related-claims h4{font-size:15px;line-height:1.35;margin:0 0 3px}
+.related-claims p{font-size:12px;color:var(--muted);margin:0 0 12px}
+.related-columns{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,245px),1fr));gap:18px}
+.related-label{font-size:11px;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.035em;margin-bottom:7px}
+.related-claims ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.related-claims li{display:flex;flex-direction:column;gap:2px;font-size:13px;line-height:1.4}
+.related-claims a{font-weight:750;text-decoration:underline;text-underline-offset:3px}
+.related-note{color:var(--muted);font-size:12px}
