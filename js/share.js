@@ -1,4 +1,5 @@
-"use strict";\n/* Share each evidence card directly using stable URL fragments.
+"use strict";
+/* Share each evidence card directly using stable URL fragments.
    Native share sheets on mobile; clipboard or a manual-copy prompt elsewhere. */
 document.querySelectorAll(".claim .share-claim").forEach(button=>{
   button.addEventListener("click",async()=>{
