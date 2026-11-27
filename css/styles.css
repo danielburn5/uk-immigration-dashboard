@@ -131,3 +131,13 @@ details.data > summary::before,
 .chart-method[open] > summary::before,
 details.data[open] > summary::before,
 .claim-detail[open] > summary::before {content:"▾"}
+
+/* Verdict filters; compact wrap-friendly controls for mobile. */
+.claim-filters{display:flex;flex-wrap:wrap;gap:9px;margin:18px 0 8px}
+.claim-filter{border:1px solid var(--line);background:#fff;color:var(--ink);padding:9px 13px;border-radius:9px;font-size:13px;font-weight:750;line-height:1.4;white-space:nowrap}
+.claim-filter:hover{border-color:var(--teal)}
+.claim-filter[aria-pressed="true"]{background:#184f55;color:#fff;border-color:#184f55}
+.claim-filter .filter-count{font-weight:500;opacity:.82}
+.filter-status{margin:0 0 18px;color:var(--muted);font-size:12px}
+.claim[hidden]{display:none!important}
+@media(max-width:550px){.claim-filters{gap:7px}.claim-filter{padding:8px 10px;font-size:12px}}
