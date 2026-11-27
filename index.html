@@ -31,6 +31,21 @@ details.data{margin-top:16px;border-top:1px solid var(--line);padding-top:11px}d
 .share-claim{display:inline-flex;align-items:center;justify-content:center;gap:8px;margin-top:14px;border:1px solid #b9cecd;border-radius:8px;padding:8px 12px;background:#f2f8f7;color:#155c60;font-size:13px;font-weight:750;min-height:40px}
 .share-claim:hover{background:#e0f1ee}
 .share-claim:focus-visible{outline:3px solid #f5b65f;outline-offset:3px}
+
+/* Migration by age: pairwise horizontal bars, readable on narrow phones */
+.age-legend{display:flex;flex-wrap:wrap;gap:18px;margin:16px 0 20px;font-size:13px;color:#526673}
+.age-legend span{display:inline-flex;align-items:center;gap:7px}
+.age-key{width:12px;height:12px;display:inline-block;border-radius:3px}
+.age-rows{display:grid;gap:16px;margin-bottom:23px}
+.age-row{display:grid;grid-template-columns:85px minmax(0,1fr);gap:12px;align-items:center}
+.age-band{font-size:14px;font-weight:700}
+.age-pair{display:grid;gap:5px}
+.age-line{display:grid;grid-template-columns:minmax(0,1fr) 60px;align-items:center;gap:10px}
+.age-track{height:13px;background:#eff3f2;border-radius:3px;overflow:hidden}
+.age-fill{height:100%;border-radius:3px;min-width:0}
+.age-value{text-align:right;font-size:12px;color:#425763;font-variant-numeric:tabular-nums}
+.age-source{font-size:12px;color:#61727a;margin:14px 0 0}
+@media(max-width:550px){.age-row{grid-template-columns:64px minmax(0,1fr);gap:8px}.age-band{font-size:12px}.age-line{grid-template-columns:minmax(0,1fr) 44px;gap:6px}.age-value{font-size:11px}.age-rows{gap:13px}}
 </style>
 </head>
 <body>
@@ -55,6 +70,15 @@ details.data{margin-top:16px;border-top:1px solid var(--line);padding-top:11px}d
 <article class="panel"><h3>Where are arrivals from?</h3><p class="sub">Arrivals by nationality group · years ending June 2021–2026 · thousands</p><div class="viz" id="nationality-chart"></div><p class="chart-caption"><strong>What stands out:</strong> Non-EU+ nationals accounted for 550k of 738k arrivals in 2026 (about 75%). This measures nationality groups, <em>not</em> ethnicity or individual circumstances.</p><div id="nationality-data"></div></article>
 <article class="panel wide"><h3>Why do non-EU+ nationals come to the UK?</h3><p class="sub">Long-term arrivals by initial immigration reason · thousands</p><div class="toggle" aria-label="Reason year" id="reason-tabs"><button type="button" aria-pressed="false" data-reason="2023">2023 peak</button><button type="button" aria-pressed="true" data-reason="2026">2026 latest</button></div><div class="reasons" id="reasons-chart"></div><div class="callout" id="reasons-note">Work and study account for 392,000 of 550,000 non-EU+ arrivals in 2026, including dependants. Asylum accounts for 73,000 (about 13%). These are reasons for immigration, not assessments of people's character or contribution.</div><div id="reason-data"></div></article>
 </div></section>
+<section class="section" id="ages"><div class="sectionhead"><div><div class="tinytitle">A closer look at who moves</div><h2>How old are people arriving and leaving?</h2><p>ONS age profiles for British and non-EU+ nationals in the year ending June 2026. Select a nationality group to compare immigration and emigration across age bands.</p></div></div>
+<article class="panel wide"><div class="toggle" role="group" aria-label="Nationality group for age breakdown"><button type="button" data-age-group="british" aria-pressed="true">British nationals</button><button type="button" data-age-group="nonEU" aria-pressed="false">Non-EU+ nationals</button></div>
+<div class="age-legend" aria-hidden="true"><span><i class="age-key" style="background:#267a77"></i>Arriving</span><span><i class="age-key" style="background:#b65b45"></i>Leaving</span></div>
+<div class="age-rows" id="age-chart" role="img" aria-label="Immigration and emigration by age group"></div>
+<div class="callout" id="age-insight" aria-live="polite"></div>
+<p class="chart-caption"><strong>How to interpret this:</strong> These are numbers of people, not migration rates for the population in each age band. The figures do not show education, occupation, income or reasons for moving. The age breakdowns are rounded estimates, so the bands may not sum exactly to published totals.</p>
+<div id="age-data"></div>
+<p class="age-source">Source: ONS November 2026 publication spreadsheet, Table 7a (British nationals) and Table 7d (non-EU+ nationals), YE June 2026 P. These are two nationality groups, <em>not</em> a complete breakdown of all migrants. <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/bulletins/longterminternationalmigrationprovisional/yearendingjune2026" target="_blank" rel="noopener noreferrer">Read the ONS release</a>.</p>
+</article></section>
 <section class="section" id="claims"><div class="sectionhead"><div><div class="tinytitle">Claims under examination</div><h2>Does the evidence support the argument?</h2><p>These verdicts assess <strong>specific testable statements</strong>, not political parties or people. “Not established” is different from “false”.</p></div></div>
 <div class="claims">
 <article class="claim" id="claim-brits-leaving"><span class="verdict contradicted">Contradicted by recent trend</span><h3>“British citizens are leaving in ever-increasing numbers.”</h3><p>British emigration was 240k in 2022, peaked at 257k in 2024 and was 245k in 2026. There is no sustained recent acceleration. That does not mean the number leaving is unimportant.</p><div class="reference">ONS spreadsheet, Table 1 · British emigration, YE June 2022–2026</div><button type="button" class="share-claim" aria-label="Share a link to this claim"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.7 10.6 6.6-4.2M8.7 13.4l6.6 4.2"/></svg><span>Share this claim</span></button></article>
@@ -134,6 +158,37 @@ document.querySelectorAll(".claim .share-claim").forEach(button=>{
     }
   });
 });
+
+/* November 2026 ONS Tables 7a and 7d, year ending June 2026 P.
+   Entries are in thousands, ordered: under 16, 16–24, 25–34, 35–44, 45–54, 55–64, 65+. */
+const AGE_LABELS=["Under 16","16–24","25–34","35–44","45–54","55–64","65+"];
+const AGE_DATA={
+  british:{arrivals:[11,15,34,24,13,8,4],departures:[39,61,65,38,24,12,6],totalIn:109,totalOut:245,
+    insight:"Among British nationals, 164,000 of 245,000 emigrants (about 67%) were aged 16–44. The largest single age band leaving was 25–34 (65,000). These figures show age, not why people left."},
+  nonEU:{arrivals:[67,198,191,61,20,8,5],departures:[28,56,139,43,15,6,4],totalIn:550,totalOut:292,
+    insight:"Among non-EU+ nationals, 450,000 of 550,000 immigrants (about 82%) were aged 16–44. The largest arrival bands were 16–24 and 25–34. This doesn't establish people's jobs or economic contribution."}
+};
+function drawAge(group){
+ const dat=AGE_DATA[group], max=Math.max(...dat.arrivals,...dat.departures);
+ const root=document.getElementById("age-chart");
+ root.setAttribute("aria-label",(group==="british"?"British":"Non-EU+")+" nationals: immigration and emigration by age, year ending June 2026");
+ root.innerHTML=AGE_LABELS.map((band,i)=>{
+  const a=dat.arrivals[i], d=dat.departures[i];
+  return '<div class="age-row"><div class="age-band">'+band+'</div><div class="age-pair">'+
+   [[a,"#267a77","Arriving"],[d,"#b65b45","Leaving"]].map(([v,col,label])=>
+    '<div class="age-line" aria-label="'+label+' '+band+': '+number(v)+'"><div class="age-track"><div class="age-fill" style="width:'+(v/max*100).toFixed(2)+'%;background:'+col+'"></div></div><span class="age-value">'+v+'k</span></div>'
+   ).join("")+'</div></div>';
+ }).join("");
+ document.getElementById("age-insight").textContent=dat.insight;
+ table("age-data",["Age band","Arriving","Leaving"],AGE_LABELS.map((band,i)=>[band,dat.arrivals[i],dat.departures[i]]));
+}
+document.querySelectorAll("[data-age-group]").forEach(button=>{
+ button.addEventListener("click",()=>{
+  document.querySelectorAll("[data-age-group]").forEach(b=>b.setAttribute("aria-pressed",String(b===button)));
+  drawAge(button.dataset.ageGroup);
+ });
+});
+drawAge("british");
 </script>
 </body>
 </html>
