@@ -53,3 +53,11 @@ details.data{margin-top:16px;border-top:1px solid var(--line);padding-top:11px}d
 .intro-panel p{color:var(--muted);font-size:14px;margin:0 0 12px}
 .sitebar .shell{flex-wrap:wrap}
 @media(max-width:700px){.sitebar .shell{padding-top:12px;padding-bottom:12px}.sitebar nav{width:100%;justify-content:space-between;gap:9px;flex-wrap:wrap}.sitebar nav a{font-size:12px}.page-actions{grid-template-columns:1fr}}
+
+/* Claim-to-chart evidence links */
+.claim-evidence{display:flex;flex-direction:column;gap:5px;margin-top:2px}
+.evidence-link{font-size:14px;font-weight:750;color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+.evidence-context{font-size:12px;line-height:1.45;color:var(--muted)}
+/* Make fragment navigation clear and avoid cutting the charts against the viewport */
+#total-chart,#british-chart,#nationality-chart,#reasons-chart,#age-chart{scroll-margin-top:75px}
+#total-chart:target,#british-chart:target,#nationality-chart:target,#reasons-chart:target,#age-chart:target{outline:2px solid var(--teal);outline-offset:8px;border-radius:7px}
