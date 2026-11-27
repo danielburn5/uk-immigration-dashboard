@@ -1,4 +1,5 @@
-"use strict";\nconst colors={arr:"#267a77",dep:"#b65b45",net:"#336cab",non:"#336cab",eu:"#b65b45",brit:"#8974ab"};
+"use strict";
+const colors={arr:"#267a77",dep:"#b65b45",net:"#336cab",non:"#336cab",eu:"#b65b45",brit:"#8974ab"};
 const number=n=>new Intl.NumberFormat("en-GB").format(n*1000);
 const short=n=>Math.abs(n)>=1000?(n/1000).toFixed(n%1000===0?0:2)+"m":n+"k";
 const esc=s=>String(s).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;");
