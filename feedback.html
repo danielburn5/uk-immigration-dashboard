@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en-GB"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Send feedback, report an error, or suggest an evidence check for UK Migration in Context.">
+<title>Send feedback | UK Migration in Context</title>
+<link rel="stylesheet" href="css/styles.css?v=feedback-1">
+</head><body>
+<header class="sitebar"><div class="shell"><a class="brand" href="./">UK Migration <span style="color:#83cabc">/ In Context</span></a><nav aria-label="Main navigation"><a href="./">Overview</a><a href="explore.html">Explore</a><a href="claims.html">Claim checks</a><a href="about.html">Why I built this</a><a href="feedback.html" aria-current="page">Feedback</a></nav></div></header>
+<div class="hero"><div class="shell"><div class="eyebrow">Help make the evidence clearer</div><h1>Share your feedback</h1><p>Spotted an error, have an idea, or want to suggest a claim to investigate? I'd welcome your thoughts.</p></div></div>
+<main class="shell feedback-main">
+  <section class="feedback-panel" aria-labelledby="feedback-heading">
+    <h2 id="feedback-heading">Send a message</h2>
+    <p class="feedback-intro">Feedback helps improve this independent project. You can send a message anonymously, or leave your email if you'd like a reply.</p>
+    <div id="feedback-success" class="feedback-success" role="status" hidden tabindex="-1">
+      <strong>Thanks for your feedback.</strong> Your message has been sent.
+    </div>
+    <div id="feedback-error" class="feedback-error" role="alert" hidden></div>
+    <form id="feedback-form" action="https://formspree.io/f/xjywdkle" method="POST">
+      <div class="feedback-field">
+        <label for="feedback-category">What is your feedback about?</label>
+        <select name="category" id="feedback-category" required>
+          <option value="" disabled selected>Choose a category</option>
+          <option value="Report an error">Report an error</option>
+          <option value="Suggest an improvement">Suggest an improvement</option>
+          <option value="Suggest a claim to examine">Suggest a claim to examine</option>
+          <option value="Other feedback">Something else</option>
+        </select>
+      </div>
+      <div class="feedback-field">
+        <label for="feedback-message">Your message <span aria-hidden="true">*</span></label>
+        <textarea name="message" id="feedback-message" required minlength="10" maxlength="5000" rows="6" placeholder="What would you like me to know?"></textarea>
+      </div>
+      <div class="feedback-field">
+        <label for="feedback-email">Your email <span class="feedback-optional">(optional)</span></label>
+        <input type="email" name="email" id="feedback-email" autocomplete="email" placeholder="Only if you'd like a reply">
+      </div>
+      <div class="feedback-honeypot" aria-hidden="true">
+        <label for="feedback-website">Leave this field empty</label>
+        <input type="text" name="_gotcha" id="feedback-website" tabindex="-1" autocomplete="off">
+      </div>
+      <p class="feedback-privacy">Your message is sent securely to Formspree for delivery to the site owner. If you include an email address, it will only be used to respond to your feedback. Please don't include sensitive personal information.</p>
+      <button type="submit" class="feedback-submit" id="feedback-submit">Send feedback</button>
+    </form>
+  </section>
+</main>
+<footer class="foot"><div class="shell"><span>UK Migration in Context · ONS data only</span><span><a href="about.html">Why I built this</a> · <a href="feedback.html">Send feedback</a> · <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/bulletins/longterminternationalmigrationprovisional/yearendingjune2026" target="_blank" rel="noopener noreferrer">Original ONS release</a></span></div></footer>
+<script src="js/feedback.js?v=feedback-1" defer></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a9d0e98f62b245b8a44f421a3aa74c59"}'></script><!-- End Cloudflare Web Analytics -->
+</body></html>
