@@ -39,7 +39,7 @@
     } finally {
       sending = false;
       button.disabled = false;
-      button.textContent = "Send feedback";
+      button.textContent = "Send message";
     }
   });
 })();
