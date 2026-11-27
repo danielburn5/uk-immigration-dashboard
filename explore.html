@@ -4,7 +4,7 @@
 <meta name="color-scheme" content="light">
 <meta name="description" content="Historical UK migration statistics, nationality groups, ages and reasons from the ONS.">
 <title>Explore the data | UK Migration in Context</title>
-<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/styles.css?v=20261127-2">
 </head><body>
 <header class="sitebar"><div class="shell"><a class="brand" href="./">UK Migration <span style="color:#83cabc">/ In Context</span></a><nav aria-label="Main navigation"><a href="./" >Overview</a><a href="explore.html" aria-current="page">Explore</a><a href="claims.html" >Claim checks</a><a href="about.html" >Why I built this</a></nav></div></header>
 <div class="hero"><div class="shell"><div class="eyebrow">Explore the ONS data</div><h1>The trends behind the debate</h1><p>See immigration, emigration and nationality groups over time, then compare age profiles and reasons for migration.</p><div class="source-pill">● Latest period: year ending June 2026 · <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/bulletins/longterminternationalmigrationprovisional/yearendingjune2026" target="_blank" rel="noopener noreferrer">ONS release, 26 Nov 2026 ↗</a></div></div></div>
@@ -26,5 +26,17 @@
 <section class="section"><div class="intro-panel"><h2>What do the numbers prove?</h2><p>These data show how many people move, their nationality groups, ages and initial reasons for moving. They cannot on their own establish cause, economic contribution or desirability.</p><a href="claims.html">Explore the claim assessments →</a></div></section>
 </main>
 <footer class="foot"><div class="shell"><span>UK Migration in Context · ONS data only</span><span><a href="about.html">Why I built this</a> · <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/bulletins/longterminternationalmigrationprovisional/yearendingjune2026" target="_blank" rel="noopener noreferrer">Original ONS release</a></span></div></footer>
-<script src="js/data.js"></script><script src="js/charts.js"></script>
+<script>
+window.addEventListener("load",()=>{
+  const root=document.getElementById("total-chart");
+  if(root&&!root.querySelector("svg")){
+    const warning=document.createElement("p");
+    warning.setAttribute("role","alert");
+    warning.style.cssText="padding:12px 14px;background:#fff0d1;border-radius:8px;color:#7b5a24";
+    warning.textContent="The chart couldn't load. Please try refreshing the page. If this persists, let us know so we can investigate.";
+    root.replaceChildren(warning);
+  }
+});
+</script>
+<script src="js/data.js?v=20261127-2"></script><script src="js/charts.js?v=20261127-2"></script>
 </body></html>
