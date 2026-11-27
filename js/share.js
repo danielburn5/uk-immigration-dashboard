@@ -23,3 +23,40 @@ document.querySelectorAll(".claim .share-claim").forEach(button=>{
   });
 });
 
+
+
+/* Filter verdicts client-side. Keep every claim and its stable fragment link in the HTML. */
+const claimFilters=[...document.querySelectorAll("[data-claim-filter]")];
+const claimCards=[...document.querySelectorAll(".claims .claim")];
+const filterStatus=document.getElementById("claim-filter-status");
+let activeClaimFilter="all";
+function applyClaimFilter(filter){
+  if(!["all","supported","contradicted","uncertain"].includes(filter))return;
+  activeClaimFilter=filter;
+  let visible=0;
+  claimCards.forEach(card=>{
+    const verdict=card.querySelector(".verdict");
+    const match=filter==="all"||verdict.classList.contains(filter);
+    card.hidden=!match;
+    if(match)visible++;
+  });
+  claimFilters.forEach(button=>{
+    const active=button.dataset.claimFilter===filter;
+    button.setAttribute("aria-pressed",String(active));
+    button.classList.toggle("is-active",active);
+  });
+  const label=filter==="all"?"all":filter==="uncertain"?"not established":filter;
+  if(filterStatus)filterStatus.textContent=filter==="all"?"Showing all "+visible+" claims.":"Showing "+visible+" "+label+" claims.";
+}
+claimFilters.forEach(button=>button.addEventListener("click",()=>applyClaimFilter(button.dataset.claimFilter)));
+function revealLinkedClaim(){
+  const id=decodeURIComponent(location.hash.slice(1));
+  if(!id.startsWith("claim-"))return;
+  const target=document.getElementById(id);
+  if(target?.classList.contains("claim")&&target.hidden){
+    applyClaimFilter("all");
+    target.scrollIntoView({block:"start"});
+  }
+}
+window.addEventListener("hashchange",revealLinkedClaim);
+revealLinkedClaim();
