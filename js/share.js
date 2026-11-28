@@ -1,12 +1,10 @@
 "use strict";
-/* Share each evidence card directly using stable URL fragments.
+/* Share each evidence card using a dedicated static URL with claim-specific metadata.
    Native share sheets on mobile; clipboard or a manual-copy prompt elsewhere. */
 document.querySelectorAll(".claim .share-claim").forEach(button=>{
   button.addEventListener("click",async()=>{
     const card=button.closest(".claim");
-    const link=new URL(window.location.href);
-    link.hash=card.id;
-    const url=link.toString();
+    const url=new URL("claim-previews/"+card.id+".html",window.location.href).toString();
     const label=card.querySelector("h3")?.textContent?.trim()||"ONS migration evidence";
     if(navigator.share){
       try{await navigator.share({title:"UK Migration in Context",text:label,url});return;}
